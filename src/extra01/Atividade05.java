@@ -3,54 +3,77 @@ package extra01;
 import java.util.Scanner;
 
 /* Atividade05
- * Criei um projeto para calcular dos valores digitados pelo usuário. 
- * Deverá ser apresentado um menu para o usuário para que ele possa escolher
- *  um dos cálculos abaixo: 
+ * Criei um projeto para calcular dos valores digitados pelo usuÃ¡rio. 
+ * DeverÃ¡ ser apresentado um menu para o usuÃ¡rio para que ele possa escolher
+ *  um dos cÃ¡lculos abaixo: 
 
-•	Soma
-•	Subtração
-•	Multiplicação
-•	Divisão
-•	Resto da Divisão
-•	Média dos valores
- Utilize o conceito de orientação a objetos para implementar.
+â€¢	Soma
+â€¢	SubtraÃ§Ã£o
+â€¢	MultiplicaÃ§Ã£o
+â€¢	DivisÃ£o
+â€¢	Resto da DivisÃ£o
+â€¢	MÃ©dia dos valores
+ Utilize o conceito de orientaÃ§Ã£o a objetos para implementar.
+* Parte 1 de 2.
+ * Parte 2 Ã© : TestCalculo.
  */
 
-public class Atividade05 {
-	 public static void main(String[] args) {
-	      Scanner s = new Scanner(System.in);
-	      System.out.print("Digite o primeiro número: ");
-	      double priNumero = s.nextInt();
-	      System.out.print("Digite o segundo número: ");
-	      double segunNumero = s.nextInt();
-	      
-	      System.out.println("Escolha a opção desejada: \n a) soma:\n b) subtração:\n c) multiplicação:\n d) divisão:\n e) resto da divisão:\n f) média dos valores: ");
-	      String opcao = s.next();
-	      
-	      if(opcao.equals("a")) {
-	    	  double soma = priNumero + segunNumero;
-		      System.out.println("A soma dos números é " + soma);
-	      }else if(opcao.equals("b")) {
-	    	  double sub = priNumero - segunNumero;
-		      System.out.println("A subtração dos números é " + sub);
-	      }else if(opcao.equals("c")) {
-	    	  double multi = priNumero * segunNumero;
-		      System.out.println("A multiplicação dos números é " + multi);
-	      }else if(opcao.equals("d")) {
-	    	  double divi = priNumero / segunNumero;
-		      System.out.println("A divisão dos números é " + divi);
-	      }else if(opcao.equals("e")){
-	      	  double resto = priNumero % segunNumero;
-	      	  System.out.println("O resto da divisão dos números é " + resto);
-	      }else if(opcao.equals("f")){
-	      	  double media = (priNumero + segunNumero) / 2;
-	      	  System.out.println("A média dos números é " + media);	  
-	      }else {
-	    	  System.out.println("Opção inválida");
-	      }
-	      
-	      s.close();
-	      
-	     
-	 }
+public class Calculo {
+
+	public double soma(double ...valores) {
+		double resultado = 0;
+		
+		for (double v : valores) {
+			resultado += v;
+		}
+		return resultado;
+	}
+	
+	public double subtracao(double ...valores) {
+		double resultado = valores[0];
+		
+		for (int i = 1; i < valores.length; i++) {
+			resultado -= valores[i];
+		}
+		return resultado;	
+	}
+	
+	public double multiplicacao(double ...valores) {
+		double resultado = 1;
+		
+		for (double v : valores) {
+			resultado *= v;
+		}
+		return resultado;
+	}
+	
+	public double divisao(double ...valores) {
+		double resultado = valores[0];
+		
+		for (int i = 1; i < valores.length; i++) {
+			resultado /= valores[i];
+		}
+		return resultado;
+	}
+	
+	public double restodivisao(double ...valores) {
+		double resultado = valores[0];
+		
+		for (int i = 1; i < valores.length; i++) {
+			resultado %= valores[i];
+		}
+		return resultado;
+	}
+	
+	public double mediavalores(double ...valores) {
+		double resultado = 0;
+		int contador = 0;
+		
+		for (double v : valores) {
+			resultado += v;
+			contador++;
+		}
+		return resultado / contador;
+	}
+	
 }
