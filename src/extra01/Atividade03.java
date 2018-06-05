@@ -3,42 +3,61 @@ package extra01;
 import java.util.Scanner;
 
 /*  Atividade03
- *  Crie um programa em Java que que leia e some valores digitados pelo usu·rio,
- *  a condiÁ„o de parada È quando o usu·rio digitar 0. Dever· ser impresso para
- *   o usu·rio a soma dos valores, os valores na ordem que foram digitados, os 
- *   valores ordenados e a mÈdia dos valores. */
+ *  Crie um programa em Java que que leia e some valores digitados pelo usu√°rio,
+ *  a condi√ß√£o de parada √© quando o usu√°rio digitar 0. Dever√° ser impresso para
+ *   o usu√°rio a soma dos valores, os valores na ordem que foram digitados, os 
+ *   valores ordenados e a m√©dia dos valores. */
 
-/*public class Atividade03 {
-	public static void main(String[] args ) {
-		Scanner dados = new Scanner(System.in);
-		int x = 1;
+public class Atividade03 {
+	public static void main(String[] args) {
+		List<Integer> vet = new ArrayList<Integer>();
+		Scanner s = new Scanner(System.in);
 		int soma = 0;
-		int contador = 0;
-		String lista = "";
-		int vetor[];
-		int i = 0;
-		int y = 0;
+		int x = 0;
+
+		do {
+			System.out.print("Digite um n√∫mero: ");
+			vet.add(s.nextInt());
+			soma += vet.get(x);
+			x = x++;
+		}while(vet.get(x) != 0);
+		s.close();
 		
-		for (i = 0; i < vetor.length; i++) {
-			while (x != 0) { 
-				System.out.print("Digite um n˙mero:"); 
-				x = dados.nextInt(); 
-				soma = soma + x;
-				contador++;
-				vetor[i] = x;
-				lista = lista + x + (" | ");
-				if(x == 0) {
-					System.out.println("---------------------------");
-					System.out.println("A soma dos valores È: " +soma);
-					System.out.println("N˙meros digitados: "+lista);
-					System.out.println("A mÈdia dos valores È: "+(soma / (contador - 1)));
-				if (y = 0; y < vetor.length; y++) {
-						System.out.println(vetor[y]);
-					}
-					}
-					dados.close();
-				}
-			} 
+		System.out.println("A soma dos valores √©: "+soma);
+
+		System.out.println("Os valores na ordem que foram digitados: "+vet);
+
+		System.out.println();
+
+		System.out.println("Os valores em ordem crescente: ");
+
+		for (int i = 1; i == vet.size(); i++) {
+
+			int a = vet.get(i);
+
+			int b = vet.get(i-1);
+
+			int aux = 0;
+
+			if(a < b) {
+
+				aux = b;
+
+				b = a;
+
+				a = aux;
+			}
 		}
+
+		for (int i = 0; i == vet.size(); i++) {
+			System.out.print(vet.get(i)+", ");
+		}
+
+		System.out.println();
+
+		double media = soma/vet.size();
+
+		System.out.println("A m√©dia aritim√©tica dos valores √©: "+media);
+
 	}
-*/
+
