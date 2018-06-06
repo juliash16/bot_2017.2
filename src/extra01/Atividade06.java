@@ -46,14 +46,14 @@ public class Atividade06 {
 	        
 		 System.out.println("Digite um número para a pesquisa:");
 	         pesquisa = numero2.nextInt();
-		 for (int y = 0; y < vet.size(); y++) {
+		 for (int y = 0; y < vetor.size(); y++) {
 			if(vet.get(y) == pesquisa) {
 				System.out.println("Valor: "+vet.get(y)+", posição: "+y);
 			}
 		}
 		 
-		 for (int i = 0; i < vet.size(); i++) {
-			n = vet.get(i);
+		 for (int i = 0; i < vetor.size(); i++) {
+			n = vetor.get(i);
 			if (n == pesquisa) {
 				igual++;
 				break;
@@ -68,9 +68,9 @@ public class Atividade06 {
 		System.out.println(g+" Números são iguais a "+pesquisa);
 		System.out.println(maior+" Números são maiores que a "+pesquisa);
 		System.out.println(menor+" Números são menores que a "+pesquisa);
-		Collections.sort(vet);
-		System.out.println("Ordem crescente "+vet); 
-		Collections.reverse(vet);
-		System.out.println("Ordem decrescente "+vet); 
+		Collections.sort(vetor);
+		System.out.println("Ordem crescente "+vetor); 
+		Collections.reverse(vetor);
+		System.out.println("Ordem decrescente "+vetor); 
 		 
 }
