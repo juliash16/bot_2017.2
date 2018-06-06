@@ -65,7 +65,7 @@ public class Atividade06 {
 			 	break;
 		 }
 		 
-		System.out.println(g+" Números são iguais a "+pesquisa);
+		System.out.println(igual+" Números são iguais a "+pesquisa);
 		System.out.println(maior+" Números são maiores que a "+pesquisa);
 		System.out.println(menor+" Números são menores que a "+pesquisa);
 		Collections.sort(vetor);
