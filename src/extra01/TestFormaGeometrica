@@ -1,0 +1,67 @@
+package extra01;
+
+import java.util.Scanner;
+
+public class TestFormaGeometrica {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    int num = 0;
+    System.out.print("Quantas formas quer criar?: ");
+	  int num = s.nextInt();
+    s.close();
+    
+    int vetor[] = new int[num];
+    Scanner t = new Scanner(System.in);
+		for (int i = 0; i < formas.length; i++) {
+      System.out.print("Escolha uma opção: a)Quadrado \nb)Retângulo \nc)Círculo"));
+      String escolha = t.nextString();
+      if(escolha.equalsIgnoreCase("a")) {
+          vetor[i] = new Quadrado;
+		      System.out.println("Lado do quadrado : ");
+		  }else if (escolha.equalsIgnoreCase("b")){
+			    vetor[i] = new Retangulo;
+		      System.out.println("Altura do retangulo : ");
+          System.out.println("Base do retangulo : ");
+		  }else if (escolha.equalsIgnoreCase("c")) {
+			    vetor[i] = new Circulo;
+		      System.out.println("Raio do circulo : ");
+		  }else {
+			  System.out.println("Opção inválida");
+		  }
+	      s.close();
+		}
+    
+		Scanner n = new Scanner(System.in);
+    System.out.print("Escolha uma opção: a)Dados da forma(lado ou raio) \nb)Perimetro \nc)Areas"));
+    String opcao = n.nextString();
+    
+      if(escolha.equalsIgnoreCase("a")) {
+        for (int y = 0; y < formas.length; y++) {
+				  System.out.println(formas[y]);
+        }
+		  }else if (escolha.equalsIgnoreCase("b")){
+			   for (int y = 0; y < formas.length; y++) {
+				    if(formas[y] instanceof Quadrado){
+					    System.out.println("Perimetro do quadrado: "+((Quadrado)formas[y]).perimetro());
+            } else if(formas[y] instanceof Retangulo) {
+						  System.out.println("Perimetro do retângulo: "+((Retangulo)formas[y]).perimetro());
+				    }else{
+						  System.out.println("Perímetro do círculo: "+((Circulo)formas[y]).perimetro());
+            }
+         }
+		  }else if (escolha.equalsIgnoreCase("c")) {
+			   for (int y = 0; y < formas.length; y++) {
+				    if(formas[y] instanceof Quadrado) {
+					   System.out.println("Área do quadrado: "+((Quadrado)formas[y]).area());
+            } else if(formas[y] instanceof Retangulo) {
+					    System.out.println("Área do retângulo: "+((Retangulo)formas[y]).area());
+            } else {
+					    System.out.println("Área do círculo: "+((Circulo)formas[y]).area());
+            }
+         }
+		  }else {
+			  System.out.println("Opção inválida");
+		  }
+	      s.close();
+		}
+}
