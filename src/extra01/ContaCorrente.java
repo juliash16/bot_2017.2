@@ -1,18 +1,19 @@
 package extra01;
 
 /* Desenvolva um projeto representar uma conta corrente de um banco. 
- * A classe conta corrente dever· ter mÈtodos para depositar, sacar e obter
- * o saldo. Para cada saque ser· debitada tambÈm uma taxa de operaÁ„o 
- * equivalente ‡ 0,5% do valor sacado. Crie, em seguida, uma subclasse desta
+ * A classe conta corrente dever√° ter m√©todos para depositar, sacar e obter
+ * o saldo. Para cada saque ser√° debitada tamb√©m uma taxa de opera√ß√£o 
+ * equivalente √† 0,5% do valor sacado. Crie, em seguida, uma subclasse desta
  * classe anterior para representar uma conta corrente de um cliente especial.
- * Clientes especiais pagam taxas de operaÁ„o de apenas 0,1% do valor sacado.
- * FaÁa testes com as duas classes e verifique seus resultados. */
+ * Clientes especiais pagam taxas de opera√ß√£o de apenas 0,1% do valor sacado.
+ * Fa√ßa testes com as duas classes e verifique seus resultados. 
+ * Parte 1 de 3
+ * 
+ */
 
 // Atividade09
 
 public class ContaCorrente {
-	protected String nome;
-	protected String cpf;
 	protected double saldo;
 	protected int numeroConta;
 	
@@ -20,28 +21,10 @@ public class ContaCorrente {
 		
 	}
 	
-	public ContaCorrente(String nome, String cpf, double saldo, int numeroConta) {
+	public ContaCorrente(double saldo, int numeroConta) {
 		super();
-		this.nome = nome;
-		this.cpf = cpf;
 		this.saldo = saldo;
 		this.numeroConta = numeroConta;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public double getSaldo() {
@@ -59,42 +42,21 @@ public class ContaCorrente {
 	public void setNumeroConta(int numeroConta) {
 		this.numeroConta = numeroConta;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + numeroConta;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ContaCorrente other = (ContaCorrente) obj;
-		if (cpf == null) {
-			if (other.cpf != null)
-				return false;
-		} else if (!cpf.equals(other.cpf))
-			return false;
-		if (numeroConta != other.numeroConta)
-			return false;
-		return true;
-	}
-
-	/*	@Override
-	public String toString() {
-		return metodoDepositar();
+	
+	private void sacar(int numeroConta,double valor){
+		double conta = this.saldo.get(numeroConta);
+		double saque = conta-(valor*1.05);
+		this.saldo.add(id, saque);
 	}
 	
-	protected String metodoDepositar() {
-		
+	private void depositar(int numeroConta,double valor){
+		double conta = this.saldo.get(numeroConta);
+		double deposito = saldo + valor;
 	}
-	*/
+	
+	private double saldo(int numeroConta){
+		double saldo = this.saldo.get(numeroConta);
+		return saldo;
+	}
+	
 }
