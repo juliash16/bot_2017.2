@@ -1,0 +1,23 @@
+package extra01;
+
+/*
+* Desenvolva um projeto que crie uma classe que representa um plano
+* cartesiano, também, crie uma classe para representar um triangulo, 
+* reusando a classe anterior por composição. Por fim, escreva um programa
+* que receba do usuário as coordenadas dos vértices do triangulo e imprima seu perímetro. 
+* Parte 2 de 3
+* Parte 2 = Triangulo
+* Parte 3 = TestTriangulo
+*/
+
+public class Triangulo {
+	PlanoCartesiano a = new PlanoCartesiano();
+	PlanoCartesiano b = new PlanoCartesiano();
+	PlanoCartesiano c = new PlanoCartesiano();
+  
+  public Triangulo() {
+  
+  }
+  
+  
+}
