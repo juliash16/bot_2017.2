@@ -25,7 +25,7 @@ package extra01;
 * Parte6 = TestFormaGeometrica
 */
 
-public interface FormaGeometrica {
+public interface IFormaGeometrica {
 
 	public double perimetro();
 	
