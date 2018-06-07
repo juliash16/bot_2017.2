@@ -18,7 +18,7 @@ package extra01;
 * (lados ou raio); (b) os perímetros; e (c) as áreas de todas as formas. Para (b) e (c)
 * , tire vantagem do polimorfismo, enquanto que para (a) utilize instanceof e downcast.
 * Parte 2 de 6
-* Parte1 = FormaGeometrica
+* Parte1 = IFormaGeometrica
 * Parte2 = Quadrilatero
 * Parte3 = Retangulo
 * Parte4 = Quadrado
@@ -27,7 +27,7 @@ package extra01;
 */
 
 
-public abstract class Quadrilatero implements FormaGeometrica{
+public abstract class Quadrilatero implements IFormaGeometrica{
 	protected double lado1;
   protected double lado2;
   protected double lado3;
